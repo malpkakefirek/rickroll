@@ -7,10 +7,47 @@
             #rick {
                 display: none;
             }
+            html {
+                background-color: #201235;
+            }
+            body {
+                background: linear-gradient(145deg, #201235, #5865F2);
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+            }
+            .main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                /* height: 100vh;  */
+                color: rgb(237, 237, 237);
+                margin-top: 10rem;
+            }
+            .content-text {
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+            h1, p, button {
+                color: rgb(237, 237, 237);
+            }
+            h1 {
+                font-size: 3.5rem;
+                margin-bottom: 20px;
+                background: linear-gradient(to right, #a644f1, #7439ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
         </style>
         <script>
             function playRick() {
                 const rick = document.getElementById('rick'); // get element
+                const mainContent = document.querySelectorAll('.main'); // get all elements with class "main"
+                mainContent.forEach(element => element.style.display = 'none'); // hide all main content
                 rick.style.display = 'block'; // unhide video
                 rick.requestFullscreen(); // enter full screen mode
                 rick.setAttribute('src', rick.getAttribute('src') + '?autoplay=1'); // autoplay video
@@ -18,7 +55,25 @@
         </script>
     </head>
     <body>
-        <iframe id="rick" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <button onclick="playRick();">Click Me</button>
+        <iframe id="rick" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" style="width:100%; height:100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="main">
+            <h1 style="text-align: center;">Nowy Serwer Mechów</h1>
+            <div class="content-text" style="text-align: center;">
+                Już od jakiegoś roku pracuję nad nowym serwerem Discord.<br>
+                Napisałem własne boty z grami i fajnymi funkcjami serwerowymi.<br>
+                Będą również organizowane konkursy i specjalne eventy!<br>
+            </div>
+            <div class="content-text" style="text-align: center;">
+                Wszystko to w przyjaznej atmosferze, bez spamu i niepotrzebnych wiadomości.<br>
+                Serwer jest stworzony z myślą o graczach, którzy chcą się dobrze bawić!
+            </div>
+            <div class="content-text" style="text-align: center;">
+                Zapraszam do nowego serwera Discord!
+            </div>
+            <button onclick="playRick();" style="background-color: #5865F2; border: none; border-radius: 8px; padding: 10px 20px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center; gap: 10px;">
+                <img src="discord.svg" alt="Discord Logo" style="width: 24px; height: 24px;">
+                Join Now
+            </button>
+        </div>
     </body>
 </html>
