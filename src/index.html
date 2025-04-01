@@ -48,6 +48,7 @@
                 const dsc = document.getElementById('dsc');
                 const mainContent = document.querySelectorAll('.main');
                 mainContent.forEach(element => element.style.display = 'none');
+                dsc.setAttribute('src', 'https://www.youtube.com/embed/dQw4w9WgXcQ');
                 dsc.style.display = 'block';
                 dsc.requestFullscreen();
                 dsc.setAttribute('src', dsc.getAttribute('src') + '?autoplay=1');
@@ -55,7 +56,7 @@
         </script>
     </head>
     <body>
-        <iframe id="dsc" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" style="width:100%; height:100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="dsc" src="https://discord.gg/JkFhkzvu" frameborder="0" style="width:100%; height:100%" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <div class="main">
             <h1 style="text-align: center;">Nowy Serwer Mechów</h1>
             <div class="content-text" style="text-align: center;">
